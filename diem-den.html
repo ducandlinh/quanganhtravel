@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>📍 Điểm đến Trung Quốc</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="diem-den.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">Blog Du Lịch</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">🏠 Trang chủ</a></li>
+        <li><a href="diem-den.html" class="active">📍 Điểm đến</a></li>
+        <li><a href="tip.html">💡 Tip</a></li>
+        <li><a href="gioi-thieu.html">ℹ️ Giới thiệu</a></li>
+        <li><a href="lien-he.html">📞 Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- THANH TÌM KIẾM -->
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="🔍 Tìm kiếm điểm đến Trung Quốc...">
+  </div>
+
+  <!-- DANH SÁCH ĐIỂM ĐẾN -->
+  <section class="posts" id="destinationList"></section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Blog Du Lịch - Chia sẻ trải nghiệm du lịch Trung Quốc</p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="home.js"></script>
+  <script>
+    const chinaPosts = posts.filter(p => p.category === "china");
+    const destinationList = document.getElementById("destinationList");
+
+    function renderChina(filter = "") {
+      destinationList.innerHTML = "";
+
+      const filtered = chinaPosts.filter(p =>
+        p.title.toLowerCase().includes(filter.toLowerCase())
+      );
+
+      if (filtered.length === 0) {
+        destinationList.innerHTML = "<p style='text-align:center;grid-column:1/-1;'>Không tìm thấy điểm đến!</p>";
+        return;
+      }
+
+      filtered.forEach(p => {
+        const item = document.createElement("div");
+        item.classList.add("post");
+        item.innerHTML = `
+          <a href="detail.html?id=${p.id}">
+            <img src="${p.img}" alt="${p.title}">
+            <div class="post-content">
+              <h3>${p.title}</h3>
+              <p>${p.desc}</p>
+            </div>
+          </a>
+        `;
+        destinationList.appendChild(item);
+      });
+    }
+
+    // Tìm kiếm
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      renderChina(e.target.value);
+    });
+
+    renderChina(); // Hiển thị mặc định
+  </script>
+</body>
+</html>
