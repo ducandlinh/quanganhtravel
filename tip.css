@@ -1,0 +1,157 @@
+/* ==== RESET ==== */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ==== HEADER + NAVBAR ==== */
+header {
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+/* ==== NỘI DUNG TIP ==== */
+.tips-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.tips-container h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.tips-container .intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.tip-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.tip-item {
+  background: #f9f9f9;
+  border-left: 5px solid #1abc9c;
+  padding: 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.tip-item:hover {
+  background: #eefaf7;
+  transform: translateY(-3px);
+}
+
+.tip-item h2 {
+  margin-top: 0;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.tip-item p {
+  margin: 10px 0 0;
+  color: #444;
+}
+
+/* ==== FOOTER ==== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 40px;
+}
+
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.social-links a.facebook:hover {
+  color: #3b5998;
+}
+
+.social-links a.instagram:hover {
+  color: #e4405f;
+}
+
+.social-links a.youtube:hover {
+  color: #ff0000;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .tips-container {
+    margin: 20px;
+    padding: 15px;
+  }
+}

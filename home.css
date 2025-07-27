@@ -5,13 +5,53 @@ body {
   padding: 0;
 }
 
+/* ==== HEADER + NAVIGATION ==== */
 header {
   background: #2c3e50;
   color: white;
-  text-align: center;
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  flex-wrap: wrap;
 }
 
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+/* ==== THANH TÌM KIẾM ==== */
 .search-bar {
   text-align: center;
   margin: 20px;
@@ -25,9 +65,10 @@ header {
   border-radius: 8px;
 }
 
+/* ==== DANH SÁCH BÀI VIẾT ==== */
 .posts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
   padding: 20px;
   max-width: 1200px;
@@ -65,3 +106,81 @@ header {
   color: #666;
   font-size: 14px;
 }
+
+/* ==== CHI TIẾT BÀI ==== */
+.detail-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.detail-container img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.detail-container h1 {
+  margin-top: 0;
+}
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  color: #3498db;
+  text-decoration: none;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+  .search-bar input {
+    width: 90%;
+  }
+  .posts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==== FOOTER ==== */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 40px;
+}
+
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: white;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.social-links a.facebook:hover {
+  color: #3b5998;
+}
+
+.social-links a.instagram:hover {
+  color: #e4405f;
+}
+
+.social-links a.youtube:hover {
+  color: #ff0000;
+}
+

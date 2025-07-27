@@ -3,101 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Chi tiết bài viết</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS dùng chung -->
   <link rel="stylesheet" href="home.css">
-  <style>
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header a {
-      color: white;
-      text-decoration: none;
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .search-bar {
-      max-width: 800px;
-      margin: 20px auto;
-      text-align: center;
-    }
-    .search-bar input {
-      width: 90%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-
-    /* Kết quả tìm kiếm nhỏ gọn */
-    #postList {
-      max-width: 800px;
-      margin: 20px auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-      gap: 15px;
-    }
-    #postList .post {
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-    }
-    #postList .post:hover {
-      transform: scale(1.03);
-    }
-    #postList img {
-      width: 100%;
-      height: 100px; /* Thumbnail nhỏ hơn */
-      object-fit: cover;
-    }
-    #postList .post-content {
-      padding: 10px;
-    }
-    #postList .post-content h3 {
-      font-size: 14px;
-      margin: 0 0 5px;
-    }
-    #postList .post-content p {
-      font-size: 12px;
-      color: #555;
-      margin: 0;
-    }
-
-    /* Bài chi tiết */
-    .detail-container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .detail-container img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .detail-container h1 {
-      margin-top: 0;
-    }
-    .back-link {
-      display: inline-block;
-      margin-top: 20px;
-      color: #3498db;
-      text-decoration: none;
-    }
-  </style>
+  <!-- Font Awesome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <a href="index.html">Blog Du Lịch</a>
-    <p>Khám phá những điểm đến tuyệt vời</p>
+    <div class="logo">Blog Du Lịch</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">🏠 Trang chủ</a></li>
+        <li><a href="diem-den.html">📍 Điểm đến</a></li>
+        <li><a href="tip.html">💡 Tip</a></li>
+        <li><a href="gioi-thieu.html">ℹ️ Giới thiệu</a></li>
+        <li><a href="lien-he.html">📞 Liên hệ</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- THANH TÌM KIẾM -->
@@ -111,71 +36,18 @@
   <!-- BÀI VIẾT CHI TIẾT -->
   <div class="detail-container" id="detailContent"></div>
 
-  <!-- Load danh sách bài viết -->
-  <script src="home.js"></script>
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Blog Du Lịch - Chia sẻ trải nghiệm và mẹo du lịch hữu ích</p>
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </footer>
 
-  <!-- Xử lý hiển thị bài chi tiết & tìm kiếm -->
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = parseInt(params.get("id"));
-
-    const detailContainer = document.getElementById("detailContent");
-    const postList = document.getElementById("postList");
-    const post = posts.find(p => p.id === id);
-
-    // Hiển thị bài chi tiết
-    if (post) {
-      detailContainer.innerHTML = `
-        <img src="${post.img}" alt="${post.title}">
-        <h1>${post.title}</h1>
-        <p>${post.content}</p>
-        <a class="back-link" href="index.html">← Quay lại trang chủ</a>
-      `;
-    } else {
-      detailContainer.innerHTML = `
-        <p>❌ Không tìm thấy bài viết!</p>
-        <a class="back-link" href="index.html">← Quay lại trang chủ</a>
-      `;
-    }
-
-    // Xử lý tìm kiếm
-    const searchInput = document.getElementById("searchInput");
-    searchInput.addEventListener("input", (e) => {
-      const keyword = e.target.value.toLowerCase().trim();
-      postList.innerHTML = "";
-
-      if (keyword === "") {
-        postList.style.display = "none"; // không gõ thì ẩn kết quả
-        return;
-      }
-
-      // Lọc bài viết (trừ bài đang xem)
-      const filtered = posts.filter(
-        p => p.id !== id && p.title.toLowerCase().includes(keyword)
-      );
-
-      postList.style.display = "grid"; // Hiện kết quả khi có tìm kiếm
-
-      if (filtered.length === 0) {
-        postList.innerHTML = "<p style='text-align:center;grid-column:1/-1;'>Không tìm thấy bài viết!</p>";
-        return;
-      }
-
-      filtered.forEach(p => {
-        const item = document.createElement("div");
-        item.classList.add("post");
-        item.innerHTML = `
-          <a href="detail.html?id=${p.id}">
-            <img src="${p.img}" alt="${p.title}">
-            <div class="post-content">
-              <h3>${p.title}</h3>
-              <p>${p.desc}</p>
-            </div>
-          </a>
-        `;
-        postList.appendChild(item);
-      });
-    });
-  </script>
+  <!-- JS -->
+  <script src="home.js"></script>  <!-- Chứa danh sách posts -->
+  <script src="detail.js"></script> <!-- Xử lý hiển thị chi tiết & tìm kiếm -->
 </body>
 </html>

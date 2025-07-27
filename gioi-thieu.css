@@ -1,0 +1,161 @@
+/* RESET + FONT */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* HEADER */
+header {
+  background: #2c3e50;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  flex-wrap: wrap;
+}
+
+header .logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+/* ABOUT SECTION */
+.about-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.profile-pic img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #1abc9c;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h1 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.about-text .highlight {
+  color: #1abc9c;
+  font-weight: bold;
+}
+
+.about-text p {
+  color: #555;
+}
+
+.about-text h2 {
+  margin-top: 20px;
+  color: #2c3e50;
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+}
+
+.info-list li {
+  margin: 8px 0;
+  color: #333;
+}
+
+.info-list li i {
+  color: #1abc9c;
+  margin-right: 8px;
+}
+
+/* SOCIAL ICONS */
+.social-links {
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  font-size: 24px;
+  color: #2c3e50;
+  transition: 0.3s;
+}
+
+.social-links a.facebook:hover {
+  color: #3b5998;
+}
+
+.social-links a.instagram:hover {
+  color: #e4405f;
+}
+
+.social-links a.youtube:hover {
+  color: #ff0000;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: white;
+  margin-top: 40px;
+}
+
+footer .social-links {
+  justify-content: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-pic img {
+    width: 180px;
+    height: 180px;
+  }
+}
