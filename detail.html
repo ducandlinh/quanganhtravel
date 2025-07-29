@@ -13,17 +13,22 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo">Blog Du Lịch</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">🏠 Trang chủ</a></li>
-        <li><a href="diem-den.html">📍 Điểm đến</a></li>
-        <li><a href="tip.html">💡 Tip</a></li>
-        <li><a href="gioi-thieu.html">ℹ️ Giới thiệu</a></li>
-        <li><a href="lien-he.html">📞 Liên hệ</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="logo">Blog Du Lịch</div>
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">🏠 Trang chủ</a></li>
+      <li><a href="diem-den.html">📍 Điểm đến</a></li>
+      <li><a href="tip.html">💡 Tip</a></li>
+      <li><a href="gioi-thieu.html">ℹ️ Giới thiệu</a></li>
+      <li><a href="lien-he.html">📞 Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <!-- THANH TÌM KIẾM -->
   <div class="search-bar">
@@ -38,16 +43,26 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Blog Du Lịch - Chia sẻ trải nghiệm và mẹo du lịch hữu ích</p>
-    <div class="social-links">
-      <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-    </div>
-  </footer>
+  <p>© 2025 Blog Du Lịch - Chia sẻ trải nghiệm và mẹo du lịch hữu ích</p>
+  <div class="social-links">
+    <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+    <a href="https://tiktok.com" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
+  </div>
+</footer>
 
   <!-- JS -->
   <script src="home.js"></script>  <!-- Chứa danh sách posts -->
   <script src="detail.js"></script> <!-- Xử lý hiển thị chi tiết & tìm kiếm -->
+
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+  }
+</script>
+
+
 </body>
 </html>

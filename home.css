@@ -150,6 +150,47 @@ header nav {
   }
 }
 
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Hiển thị hamburger và ẩn menu trên mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    position: relative;
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #34495e;
+    width: 100%;
+    padding: 15px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    text-align: left;
+    padding: 10px 20px;
+  }
+}
+
+
 /* ==== FOOTER ==== */
 footer {
   text-align: center;
@@ -183,4 +224,9 @@ footer {
 .social-links a.youtube:hover {
   color: #ff0000;
 }
+
+.social-links a.tiktok:hover {
+  color: #000000;
+}
+
 

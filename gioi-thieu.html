@@ -13,17 +13,22 @@
 
   <!-- HEADER -->
   <header>
-    <div class="logo">Blog Du Lịch</div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">🏠 Trang chủ</a></li>
-        <li><a href="diem-den.html">📍 Điểm đến</a></li>
-        <li><a href="tip.html">💡 Tip</a></li>
-        <li><a href="gioi-thieu.html" class="active">ℹ️ Giới thiệu</a></li>
-        <li><a href="lien-he.html">📞 Liên hệ</a></li>
-      </ul>
-    </nav>
-  </header>
+  <div class="logo">Blog Du Lịch</div>
+  <!-- Hamburger Icon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <nav>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">🏠 Trang chủ</a></li>
+      <li><a href="diem-den.html">📍 Điểm đến</a></li>
+      <li><a href="tip.html">💡 Tip</a></li>
+      <li><a href="gioi-thieu.html" class="active">ℹ️ Giới thiệu</a></li>
+      <li><a href="lien-he.html">📞 Liên hệ</a></li>
+    </ul>
+  </nav>
+</header>
+
 
   <!-- GIỚI THIỆU -->
   <section class="about-container">
@@ -32,7 +37,7 @@
     </div>
 
     <div class="about-text">
-      <h1>👋 Xin chào, mình là <span class="highlight">[Tên của bạn]</span></h1>
+      <h1>👋 Xin chào, mình là <span class="highlight">Lê Quang Anh</span></h1>
       <p>
         Mình là một người đam mê du lịch và khám phá những vùng đất mới. 
         Blog Du Lịch này được mình tạo ra để chia sẻ trải nghiệm, mẹo vặt, 
@@ -47,7 +52,7 @@
 
       <h2>📌 Thông tin nhanh</h2>
       <ul class="info-list">
-        <li><i class="fas fa-map-marker-alt"></i> Hiện sống tại: Hà Nội, Việt Nam</li>
+        <li><i class="fas fa-map-marker-alt"></i> Hiện sống tại: Vân Nam, Trung Quốc</li>
         <li><i class="fas fa-briefcase"></i> Nghề nghiệp: Travel Blogger & Content Creator</li>
         <li><i class="fas fa-heart"></i> Sở thích: Du lịch, chụp ảnh, viết lách</li>
       </ul>
@@ -56,19 +61,28 @@
         <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
         <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+        <a href="https://tiktok.com" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Blog Du Lịch - Chia sẻ trải nghiệm và mẹo du lịch hữu ích</p>
-    <div class="social-links">
-      <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-    </div>
-  </footer>
+  <p>© 2025 Blog Du Lịch - Chia sẻ trải nghiệm và mẹo du lịch hữu ích</p>
+  <div class="social-links">
+    <a href="https://facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook"></i></a>
+    <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://youtube.com" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+    <a href="https://tiktok.com" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
+  </div>
+</footer>
+
+  <script>
+  function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+  }
+</script>
 
 </body>
 </html>

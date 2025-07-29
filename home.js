@@ -28,7 +28,7 @@ const posts = [
 
   // === TRUNG QUỐC ===
   {
-    id: 10,
+    id: 4,
     title: "Bắc Kinh - Thủ đô ngàn năm lịch sử",
     img: "https://picsum.photos/id/1005/600/400",
     desc: "Khám phá Tử Cấm Thành, Vạn Lý Trường Thành và những món ăn truyền thống Bắc Kinh.",
@@ -36,7 +36,7 @@ const posts = [
     category: "china"
   },
   {
-    id: 11,
+    id: 5,
     title: "Thượng Hải - Thành phố hiện đại bậc nhất",
     img: "https://picsum.photos/id/1006/600/400",
     desc: "Thượng Hải nổi tiếng với bến Thượng Hải, tháp truyền hình Đông Phương Minh Châu và phố Nam Kinh.",
@@ -44,7 +44,7 @@ const posts = [
     category: "china"
   },
   {
-    id: 12,
+    id: 6,
     title: "Trương Gia Giới - Cảnh quan huyền bí",
     img: "https://picsum.photos/id/1008/600/400",
     desc: "Thiên đường của những dãy núi đá vôi kỳ vĩ, bối cảnh phim Avatar nổi tiếng.",
@@ -52,13 +52,31 @@ const posts = [
     category: "china"
   },
   {
-    id: 13,
+    id: 7,
     title: "Tây An - Cội nguồn văn hóa Trung Hoa",
     img: "https://picsum.photos/id/1010/600/400",
     desc: "Nổi tiếng với lăng mộ Tần Thủy Hoàng và đội quân đất nung huyền thoại.",
     content: "Tây An từng là kinh đô của nhiều triều đại. Điểm nhấn là lăng mộ Tần Thủy Hoàng với hàng ngàn tượng binh sĩ đất nung...",
     category: "china"
-  }
+  },
+
+  // === TIP === 
+  {
+    id: 8,
+  title: "Mẹo chọn khách sạn giá rẻ",
+  img: "https://images.unsplash.com/photo-1560347876-aeef00ee58a1",
+  desc: "Làm sao để đặt được khách sạn chất lượng với giá hợp lý?",
+  content: "Để nhận được nhiều ưu đãi về khách sạn bạn nên đặt trước qua app...",
+  category: "tip"
+  },
+  {
+  id: 9,
+  title: "Mẹo đóng gói hành lý gọn nhẹ",
+  img: "link_anh.jpg",
+  desc: "Những mẹo đơn giản để tiết kiệm không gian vali...",
+  category: "tip"
+}
+
 ];
 
 // Hàm hiển thị danh sách bài viết (cho index.html)
