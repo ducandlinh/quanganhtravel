@@ -72,7 +72,7 @@ const posts = [
   {
   id: 9,
   title: "Mẹo đóng gói hành lý gọn nhẹ",
-  img: "link_anh.jpg",
+  img: "https://platform.vox.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/19600914/GettyImages_1037487470.jpg?crop=0%2C0%2C100%2C100&quality=90&strip=all",
   desc: "Những mẹo đơn giản để tiết kiệm không gian vali...",
   category: "tip"
 }
