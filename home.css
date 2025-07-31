@@ -189,3 +189,63 @@ footer .social-links a:hover {
     padding: 10px 20px;
   }
 }
+
+/* Bài viết chi tiết */
+.detail-container {
+  display: flex;
+  flex-direction: column; /* sửa lại thành cột dọc để ảnh và nội dung không nằm cùng hàng */
+  gap: 20px;               /* khoảng cách giữa ảnh và nội dung */
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.detail-image {
+  width: 100%;
+  max-width: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.detail-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.detail-content {
+  padding: 0 10px;
+  text-align: left;
+}
+
+.detail-content h2 {
+  font-size: 26px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+
+.detail-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Responsive chi tiết bài viết */
+@media (max-width: 768px) {
+  .detail-container {
+    padding: 20px 15px;
+  }
+
+  .detail-content h2 {
+    font-size: 22px;
+  }
+
+  .detail-content p {
+    font-size: 15px;
+  }
+}
+
